@@ -1,0 +1,120 @@
+<resources>
+    <!-- Activities introduction swipe down and first entry-->
+
+    <string name="TICKER_FIRST_USE_SWIPE_DOWN">Sie befinden sich bem Nachrichten Ticker. Artikel sind von oben nach unten gegliedert.
+                                                 Benützen Sie den Navigationkreis in der Mitte des Bildschrims und wählen Sie einen Artikel aus
+    </string>
+    <string name="TICKER_FULL_ARTICLE_FIRST_USE_SWIPE_DOWN">Sie befinden sich beim vollständigen Artikel.
+                                                    Tippen Sie auf auf die Mitte des Bildschirms um sich einen Artikel vorlesen zu lassen.
+                                                    tippen Sie erneut um das Vorlesen des Artikels zu beenden.
+    </string>
+    <string name="LOGIN_FIRST_USE_SWIPE_DOWN">Sie befinden sich im Login und Registrieungsbereich</string>
+    <string name="NEWS_FIRST_USE_SWIPE_DOWN">Sie befinden sich bei den Nachrichten. Artikel sind von oben nach unten gegliedert.
+                                          Benützen Sie den Navigationkreis in der Mitte des Bildschrims und wählen Sie einen Artikel aus
+    </string>
+    <string name="NEWS_FULL_ARTICLE_FIRST_USE_SWIPE_DOWN">sie befinden sich bei einem Nachrichten Artikel,
+        drücken Sie einmal kurz auf die Mitte um sich die Nachricht vorlesen zu lassen.
+           Wischen Sie hier nach rechts um den Artikel in den Bookmarkszu speichern
+    </string>
+    <string name="NEWS_SHORT_FIRST_USE_SWIPE_DOWN">Sie befinden sich bei den Headlines. Headlines sind von oben nach unten gegliedert.
+                                                     Benützen Sie den Navigationkreis in der Mitte des Bildschrims und wählen Sie eine Headline aus.
+
+    </string>
+    <string name="BOOKMARKS_FIRST_USE_SWIPE_DOWN">Sie befinden sich auf Ihrer Merkliste. Merklisteneinträge sind von oben nach unten gegliedert.
+                                                    Benützen Sie den Navigationkreis in der Mitte des Bildschrims und wählen Sie einen Eintrag aus.
+    </string>
+
+    !-- Strings related to Activity entry -->
+    <string name="HOME">Sie befinden sich am Startbildschirm</string>
+    <string name="HOME_ENTRY">Sie befinden sich am Startbildschirm</string>
+    <string name="TICKER_ENTRY">Sie befinden sich bem Nachrichten Ticker.</string>
+    <string name="TICKER_FULL_ARTICLE_ENTRY">Sie befinden sich beim vollständigen Artikel.</string>
+    <string name="LOGIN_ENTRY">Sie befinden sich im Login und Registrieungsbereich</string>
+    <string name="NEWS_ENTRY">Sie befinden sich bei den Nachrichten Kategorien</string>
+    <string name="NEWS_SHORT_ENTRY">Sie befinden sich bei den Nachrichten Headlines</string>
+    <string name="NEWS_FULL_ARTICLE_ENTRY">Sie befinden sich bei einem vollständigen Nachrichten Artikel,</string>
+    <string name="BOOKMARKS_ENTRY">Sie befinden sich auf Ihrer Merkliste</string>
+    <string name="BOOKMARKS_FULLARTIKEL_ENTRY">Sie befinden sich auf Ihrer Merkliste</string>
+
+    <!-- Strings related generell Tasks -->
+    <string name="change_to_home">Sie befinden sich am Startbildschirm</string>
+    <string name="date">Datum</string>
+
+    <string name="title_activity_login_register">Sign in</string>
+    <!-- Strings related to Home -->
+    <string name="login_text">Anmelden</string>
+    <string name="news_text">News</string>
+    <string name="bookmars_text">Merkliste</string>
+    <string name="ticker_text">Ticker</string>
+    <string name="drop_component">Drop Component</string>
+    <string name="reg">Drop Component</string>
+
+    <string name="app_first_use">Willkommen bei News App: Wenn Sie eine kurze Hilfestellung zum Benützen der App haben wollen, berühren Sie kurz die Mitte des Bildschrims und wischen Sie nach unten</string>
+    <string name="introduction">Sie sind am Startbildschirm. Sie steuern die Applikation mit einer Komponente die sich in der Mitte des Bildschirms befindet:
+                                Als nächsten Schritten eine kurze Erklärung zur Navigation:
+                                Oben links befindet sich das Login, oben rechts können Sie in den News bereich navigieren.
+                                Unten Links kommen Sie zu Ihren Bookmarks. Unten rechts befindet sich der Ticker.
+                                Halten Sie den Kreis in der Mitte gedrück, nach kurzer Vibration ist dieser aktiviert und
+                                Sie können den Kreis auf ein gewünschtes Menü ziehen. Durch loslassen des Kreises gelangen Sie
+                                in den ausgewählten Menüpunkt.
+                                Nun kurz zu den Funktionalitäten:
+                                Um am Startbildschirm zurückzuckommen, tippen sie zweimal kurz auf die mitte des Bildschirms.
+                                Wischen Sie nach unten um Informationen zu erhalten, wo sie sich gerade befinden.
+                                Drücken Sie kurz auf die Mitte des Bildschirms um die aktuelle Sprachausgabe zu stoppen.
+                                Berühren Sie die kurz die Komponente und wischen sie nach rechts um einen Screen zurück zu gehen.
+                                Wischen Sie links um zu dem zuletzt aufgerufenen Screen zu wechseln.
+                                Wischen Sie nach oben um die Applikation zu verlassen.
+    </string>
+    <!-- Strings related to Speak -->
+    <!-- Strings related to TouchListener -->
+    <string name="previous">Zurück</string>
+    <!-- Strings related to Login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Passwort (optional)</string>
+    <string name="action_sign_in">Anmelden oder registrieren</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">Email Adresse ungültig</string>
+    <string name="error_invalid_password">Passwort zu kurz</string>
+    <string name="error_incorrect_password">Ungültiges Passwort</string>
+    <string name="error_field_required">Verpflichtende Eingabe</string>
+    <string name="permission_rationale">"Für die Bereitstellung von E-Mail-Vervollständigungen sind Kontakteberechtigungen erforderlich."</string>
+    <string name="speak_in_email">Sagen Sie mir bitte ihre Email Adresse</string>
+    <string name="speech_not_supported">Spracheingabe wird von Ihrem Gerät nicht unterstützt</string>
+
+    !-- Strings related to News -->
+    <string name="cat_sports">Sport</string>
+    <string name="cat_economy">Wirtschaft</string>
+    <string name="cat_politics">Politik</string>
+    <string name="cat_lifestyle">Lifestyle</string>
+
+    /*NEWS FEED HEADER*/
+    <string name="cat_sports_header1">Fußball-Nachwuchscup: Jedes Tor hilft benachteiligten Kindern</string>
+    <string name="cat_sports_header2">Um die Abwehr zu stärken: Vorwärts holt Verteidiger</string>
+    <string name="cat_economy_header1">Vom Podest ins Unternehmertum: Wie Spitzensportler Karriere machen</string>
+    <string name="cat_economy_header2">Wann kommen die Casinos zur Ruhe?</string>
+    <string name="cat_lifestyle_header1">Popstar Ed Sheeran wird seine Freundin heiraten</string>
+    <string name="cat_lifestyle_header2">Kitzbühel-Abfahrt lockte Promi-Stammpersonal</string>
+    <string name="cat_politics_header1">Kein Exit vom Brexit: May beharrt auf EU-Ausstieg</string>
+    <string name="cat_policits_header2">Was passiert bei einem "Shutdown"?</string>
+
+
+    /*NEWS FEED DATA*/
+    <string name="cat_sports_data1">Die Premiere des Jako Hallenfußball Nachwuchscups hat im Vorjahr schon dermaßen eingeschlagen, dass die Veranstalter rund um Alexander Kubizek vom USV St. Ulrich das Turnier heuer gleich auf drei Spieltage und 60 Mannschaften ausgedehnt haben. Den Auftakt machen an diesem Wochenende 48 junge Teams von der U8 bis zur U13, die sich in einem professionellen Umfeld in der Stadthalle Steyr am Tabor wie richtige Topfußballer fühlen dürfen. Mit dabei ist auch die U14-Landesauswahl der Mädchen, die im U13-Bewerb zu favorisieren ist. Gespielt wird in jeder Altersgruppe in zwei Vierergruppen, einer K.o.-Phase, Platzierungs- und Finalspielen. "Wir wollen uns heuer auch sozial engagieren", sagt Kubizek, "frei nach dem Motto ,Jeder Treffer hilft‘ spenden wir für jedes erzielte Tor einen Euro an das Kinderschutzzentrum Wigwam." In diesem werden Kinder, die es im Leben nicht so gut erwischt haben, unterstützt. Spenden sind natürlich gerne gesehen.</string>
+    <string name="cat_sports_data2">Nach Stürmer Mario Petter verpflichtete der SK Vorwärts Steyr nun einen weiteren Spieler für die Frühjahrssaison in der Regionalliga Ost. Michael Noggler wechselt von Ligakonkurrent Bad Gleichenberg zum Tabellenzweiten. Der 22-jährige Linksverteidiger bringt die Erfahrung von 37 Regionalligaspielen mit und hat auch bereits ein kurzes Auslandsabenteuer beim deutschen Fünftligisten SV Lichtenberg 47 hinter sich. Als Verteidiger erzielte er für Bad Gleichenberg ein Tor.</string>
+    <string name="cat_economy_data1">Philipp Lahm hat im Fußball praktisch alles gewonnen, was es zu gewinnen gibt: Er führte die deutsche Nationalmannschaft als Kapitän zum Weltmeistertitel, war mit Bayern München mehrfacher deutscher Meister und gewann die Champions League. Jetzt will der frühere Fußballstar seine sportlichen Erfolge in der Wirtschaft wiederholen. Diese Woche hat er die Mehrheit am traditionsreichen Naturkosthersteller Schneekoppe übernommen.</string>
+    <string name="cat_economy_data2">Eine historisch gewachsene, höchst komplizierte Eigentümerstruktur, staatliche Regulierung und Großaktionäre, die sich nicht riechen können: das ist die Gemengelage rund um die Casinos Austria. Der Glücksspielkonzern hat dem Vernehmen nach im Vorjahr gut verdient, eine zerstrittene Eigentümerschaft ist aber für jedes Unternehmen ein Problem. Seit Mitte 2015 wird um die Mehrheit der Casinos Austria heftig gerangelt. Die damals 87-jährige Maria Theresia Bablik wollte ihre Beteiligung an den Casinos abstoßen. Weil die Anteile aber in komplizierte Syndikatsverträge verflochten waren, wogte der Kampf zwischen dem niederösterreichischen Glücksspielkonzern Novomatic und der tschechischen Gruppe rund um die Milliardäre Karel Komarek und Jiri Smejc hin und her.</string>
+    <string name="cat_lifestyle_data1">Der mehrfache Grammy-Gewinner Sheeran ist einer der erfolgreichsten Musiker der Gegenwart. Er war jahrelang auf der Straße und in Bars aufgetreten, bevor ihm 2014 mit seiner Ballade "Thinking Out Loud" der internationale Durchbruch gelang. Sein Album "Divide" wurde im vergangenen Jahr am Tag seiner Veröffentlichung im Musikstreamingdienst Spotify 57 Millionen Mal abgespielt - und damit fast doppelt so oft wie das Album des bisherigen Rekordhalters, "Starboy" des kanadischen R und B-Musikers The Weeknd.</string>
+    <string name="cat_lifestyle_data2">Bei Startnummer Acht war es soweit: Das Warten der Fotografen, Kameraleute, Journalisten und Fans hatte ein Ende. Der "Terminator" schritt mit Anhang aus dem VIP-Tempel Harti Weirathers, in den er rund 30 Minuten zuvor eingetreten war, und bewegte sich in Richtung Ehrentribüne. Die versammelte Security stand Spalier, der "Spießrutenlauf" inklusive Gedränge sowie Kamera- und Handyblitzlichtgewitter blieb auch diesmal nicht aus. Schwarzenegger nahm es gelassen, "steirisch geeicht", sonnenbebrillt und flotten Schrittes zur Kenntnis.</string>
+    <string name="cat_politics_data1">Das britische Volk habe in einer Abstimmung seine Entscheidung getroffen. "Ich finde es wichtig, dass Politiker dann auch liefern." Auf Deutsch fügte die Premierministerin hinzu: "Wir verlassen die EU, aber nicht Europa." Ihr Land sei "auch künftig der europäischen Verteidigung und Sicherheit verpflichtet - ohne Wenn und Aber", sagte May. Dies werde sie im Februar bei der Münchner Sicherheitskonferenz bekräftigen. Ihre Teilnahme an der Konferenz war bisher nicht bekannt.</string>
+    <string name="cat_policits_data2">Was bedeutet "Shutdown"?
+Wörtlich heißt "Shutdown" Stilllegung, Schließung oder Abschaltung. In diesem Fall liegt der "Shutdown" daran, dass der US-Regierung das Geld ausgegangen ist. Der US-Kongress hätte Mittel für ein Budget verabschieden müssen, konnte sich aber nicht einigen. Was bedeutet das konkret für die Menschen?
+Nun bleiben Ämter und Behörden geschlossen, bundeseigene Museen und andere Freizeiteinrichtungen ebenso. Bei den Nationalparks ist es noch unklar, sie sind bei Amerikanern sehr beliebt - Hunderttausende haben dort schon längst ihren Besuch geplant. Das Innenministerium will deswegen versuchen, die Parks irgendwie geöffnet zu halten. Sie sollen nicht zum Symbol des politischen Stillstands werden. Auch die Steuerbehörde IRS (Internal Revenue Service) fährt großenteils herunter. Die vielen Nachfragen wegen der frisch verabschiedeten Steuerreform können nicht beantwortet werden. Wie viele Staatsbedienstete sind betroffen, und was kostet das alles?
+Etwa die Hälfte von ihnen muss zuhause bleiben, der Zwangsurlaub gilt für etwa 800.000 Menschen. Ein Experte von Standard und Poors hat ausgerechnet, dass ein "Shutdown" die US-Wirtschaft pro Woche etwa 6,5 Milliarden Dollar (5,30 Mrd. Euro) kostet. Die meisten Bundesbediensteten, die während eines "Shutdown" weiterarbeiten, werden im dieser Zeit nicht oder nur verspätet bezahlt.</string>
+
+
+    /*Strings related to bookmarks set unset*/
+    <string name="REMOVE_BOOKMARK">"Artikel wurde aus Merkliste entfernt"</string>
+    <string name="FAIL_REMOVE_BOOKMARK">"Artikel konnte nicht aus Merkliste entfernt werden"</string>
+    <string name="SET_BOOKMARK">"Artikel wurde in die Merkliste hinzugefügt"</string>
+    <string name="FAIL_SET_BOOKMARK">"Artikel konnte nicht in die Merkliste hinzugefügt werden"</string>
+</resources>
