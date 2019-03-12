@@ -1,8 +1,10 @@
 package at.nachrichten.newsapp.messages;
 
 /**
- * Created by Harald on 06.12.2017.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public class Messages {
     public static final String LOG_TAG_SPEAK = "SPEAK";
@@ -10,10 +12,6 @@ public class Messages {
     public static final String LOG_TAG_GestureListener = "GestureListener";
     public static final String TICKER_TIME = "Artikel gepostet um: ";
     public static final String TICKER_TICKERFULLARTICLE_BACK = "Back";
-    public static final String LOGIN_EMAIL_VIEW = "email";
-    public static final String LOGIN_PASSWORD_VIEW = "password";
-    public static final String LOGIN_SIGN_IN_BUTTON_VIEW = "email_sign_in_button";
-
 
     public static final String A1_HEADER = "Weirather kritisiert Sailer-Berichte";
     public static final String A1_DATA = "Er finde es einfach nicht in Ordnung, dass man \"genau zu diesem Termin irgendeine Story ausgräbt - noch dazu über einen Menschen, der nicht mehr lebt\", so Weirather, der mit seiner Firma WWP die Hahnenkammrennen vermarktet. Hier werde medial \"sicher überzogen\", erklärte der Tiroler.\n" +

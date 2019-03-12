@@ -20,13 +20,14 @@ import at.nachrichten.newsapp.utils.Utils;
 import static android.view.View.VISIBLE;
 
 /**
- * Created by Harald on 17.01.2018.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
 
 public class NewsFullArticle extends MainActivity {
 
     private List<TextView> fullArticle;
-    public static String headerFulArticleToLoad="";
+    public static String headerFulArticleToLoad = "";
     private DBHandler db;
 
     @Override
@@ -45,11 +46,11 @@ public class NewsFullArticle extends MainActivity {
         findViewById(R.id.scrollView).setOnDragListener(dragListener); //drag erweitern. nach unten scroll
         findViewById(R.id.Back).setOnDragListener(dragListener);
         setBackTextViewHeight();
-      //  TextView fullArticle = (TextView) findViewById(R.id.ArticleTextView);
-      //  fullArticle.setText();
+        //  TextView fullArticle = (TextView) findViewById(R.id.ArticleTextView);
+        //  fullArticle.setText();
 
         createNewsFeed();
-        if(fullArticle.iterator().hasNext()){
+        if (fullArticle.iterator().hasNext()) {
             ((TextView) findViewById(R.id.ArticleTextView)).setText(fullArticle.iterator().next().getText());
         }
         sizeTextViewTextHeight();
@@ -57,8 +58,8 @@ public class NewsFullArticle extends MainActivity {
 
     private void setSizeNavigationComponent() {
         ImageView navigationComponent = (ImageView) findViewById(R.id.navigationComponent);
-        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this)/2;
-        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this)/2;
+        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this) / 2;
+        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this) / 2;
     }
 
     private void appendTextViewsToLayout() {
@@ -73,11 +74,11 @@ public class NewsFullArticle extends MainActivity {
         db = new DBHandler(this);
         List<Article> articles = db.getAllArticles();
         fullArticle = new ArrayList<TextView>();
-        for(Article article : articles){
+        for (Article article : articles) {
             String headerStart = article.getDate() + "\n" + article.getHeader() + "\n" + article.getData() + "\n";
             headerStart = headerStart.substring(0, 15);
-            headerFulArticleToLoad = headerFulArticleToLoad.substring(0,15);
-            if(headerFulArticleToLoad.equals(headerStart)){
+            headerFulArticleToLoad = headerFulArticleToLoad.substring(0, 15);
+            if (headerFulArticleToLoad.equals(headerStart)) {
                 TextView textViewToAdd = createNextTextView();
                 textViewToAdd.setText(article.getDate() + "\n" + article.getHeader() + "\n" + article.getData() + "\n");
                 fullArticle.add(textViewToAdd);
@@ -99,8 +100,8 @@ public class NewsFullArticle extends MainActivity {
         return nextView;
     }
 
-    public void sizeTextViewTextHeight(){
-        ((TextView) findViewById(R.id.ArticleTextView)).setTextSize(Utils.getScreenHeight(this)/75);
+    public void sizeTextViewTextHeight() {
+        ((TextView) findViewById(R.id.ArticleTextView)).setTextSize(Utils.getScreenHeight(this) / 75);
     }
 
     public static void setHeaderFulArticleToLoad(String headerFullArticleToLoad) {
@@ -108,11 +109,13 @@ public class NewsFullArticle extends MainActivity {
     }
 
     public float sizeBackTextViewTextHeight() {
-        return Utils.getScreenHeight(this)/65;
+        return Utils.getScreenHeight(this) / 65;
     }
+
     public int sizeTextViewHeight() {
         return Utils.getScreenHeight(this) / 6;
     }
+
     public void setBackTextViewHeight() {
         ((TextView) findViewById(R.id.Back)).setHeight(sizeTextViewHeight());
         ((TextView) findViewById(R.id.Back)).setMinHeight(sizeTextViewHeight());

@@ -1,6 +1,6 @@
 package at.nachrichten.newsapp;
 
-public class Login extends MainActivity  {
+public class Login extends MainActivity {
 
 }
 

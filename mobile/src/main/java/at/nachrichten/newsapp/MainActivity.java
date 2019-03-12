@@ -7,15 +7,17 @@ import at.nachrichten.newsapp.listener.DragListener;
 import at.nachrichten.newsapp.listener.TouchListener;
 
 /**
- * Created by Harald on 08.12.2017.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public abstract class MainActivity extends Activity {
 
     public DragListener dragListener;
     public TouchListener touchListener;
 
-    public void MainActivity(){
+    public void MainActivity() {
 
     }
 

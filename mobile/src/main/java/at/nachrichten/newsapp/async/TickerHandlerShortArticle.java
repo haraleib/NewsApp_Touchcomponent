@@ -1,8 +1,5 @@
 package at.nachrichten.newsapp.async;
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -15,12 +12,14 @@ import java.util.List;
 import at.nachrichten.newsapp.messages.Messages;
 
 /**
- * Created by Harald on 07.12.2017.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public class TickerHandlerShortArticle extends ContentHandler {
     private final String URL = "http://www.nachrichten.at/nachrichten/ticker/";
-    //key is content, necessary to map conent to link to find correct article. String [0] content, [1] time, [2] link
+    //key is content, necessary to map content to link to find correct article. String [0] content, [1] time, [2] link
     private static HashMap<String, String[]> contentMap;
     private static boolean fetched = false;
     private List<String> headlineList;
@@ -52,8 +51,8 @@ public class TickerHandlerShortArticle extends ContentHandler {
         fetched = false;
         try {
             Document jdoc = Jsoup.connect(URL).get();
-            Elements headlineTag = jdoc.select("h2").attr("class", "textsize uticker_headline");
-            Elements timeTag = jdoc.select("span.uticker_time");
+            Elements headlineTag = jdoc.getElementsByClass("textsize uticker_headline");
+            Elements timeTag = jdoc.getElementsByClass("uticker_time");
             Elements linksTag = headlineTag.select("a");
             headlineList = headlineTag.eachText();
             timeList = timeTag.eachText();

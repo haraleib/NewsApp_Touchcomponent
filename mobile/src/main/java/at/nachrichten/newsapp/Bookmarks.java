@@ -21,7 +21,8 @@ import at.nachrichten.newsapp.utils.Utils;
 import static android.view.View.VISIBLE;
 
 /**
- * Created by Harald on 17.01.2018.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
 
 public class Bookmarks extends MainActivity {
@@ -30,13 +31,6 @@ public class Bookmarks extends MainActivity {
     private List<TextView> markedArticlesShort;
     private static List<String> shortArticleHeader;
     private DBHandler db;
-
-    //TODO: TESTING: kurze vibration wenn touch ausgelöst. beim eintreten in view bsP: views wählen sie eine kategorie
-    //TODO: ontouch abbrechen tts
-    //TODO: cutoff tts on double tap while readiing article
-    //TODO: TESTING first entry on activity speak activity functionalities. second time only wich screen
-    //TODO: TESTING first entry on activity speak activity functionalities.
-    //TODO:  TESTING ANMELDEN BLEIB HOMESCREEN
 
     public static List<String> getShortArticleHeader() {
         return shortArticleHeader;
@@ -66,8 +60,8 @@ public class Bookmarks extends MainActivity {
 
     private void setSizeNavigationComponent() {
         ImageView navigationComponent = (ImageView) findViewById(R.id.navigationComponent);
-        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this)/2;
-        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this)/2;
+        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this) / 2;
+        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this) / 2;
     }
 
     private void appendTextViewsToLayout() {
@@ -75,10 +69,10 @@ public class Bookmarks extends MainActivity {
         Iterator<TextView> iterNewsFeed = shortArticle.iterator();
         boolean overwriteLoadingArticle = false;
         while (iterNewsFeed.hasNext()) {
-            if(!overwriteLoadingArticle) {
+            if (!overwriteLoadingArticle) {
                 assignToLoadingArticleView(iterNewsFeed);
                 overwriteLoadingArticle = !overwriteLoadingArticle;
-            }else {
+            } else {
                 contentLayout.addView(iterNewsFeed.next());
             }
         }
@@ -89,8 +83,8 @@ public class Bookmarks extends MainActivity {
         List<Article> articles = db.getAllArticles();
         shortArticleHeader = new ArrayList<String>();
         shortArticle = new ArrayList<TextView>();
-        for(Article article : articles){
-            if(article.getIsBookMarked().equals("Yes")) {
+        for (Article article : articles) {
+            if (article.getIsBookMarked().equals("Yes")) {
                 shortArticleHeader.add(article.getDate() + "\n" + article.getHeader() + "\n");
                 TextView textViewToAdd = createNextTextView();
                 textViewToAdd.setText(article.getDate() + "\n" + article.getHeader() + "\n");
@@ -116,7 +110,7 @@ public class Bookmarks extends MainActivity {
         return nextView;
     }
 
-    private void assignToLoadingArticleView( Iterator<TextView> iterNewsFeed){
+    private void assignToLoadingArticleView(Iterator<TextView> iterNewsFeed) {
         ((TextView) findViewById(R.id.ArticleTextView)).setText(iterNewsFeed.next().getText());
         ((TextView) findViewById(R.id.ArticleTextView)).setTextSize(sizeTextViewTextHeight());
         ((TextView) findViewById(R.id.ArticleTextView)).setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
@@ -125,9 +119,9 @@ public class Bookmarks extends MainActivity {
     }
 
 
-    public float sizeTextViewTextHeight(){
+    public float sizeTextViewTextHeight() {
         //    Integer height = ((TextView) findViewById(R.id.ArticleTextView)).getHeight();
         //    Float heightF = (float) height;
-        return Utils.getScreenHeight(this)/65;
+        return Utils.getScreenHeight(this) / 65;
     }
 }

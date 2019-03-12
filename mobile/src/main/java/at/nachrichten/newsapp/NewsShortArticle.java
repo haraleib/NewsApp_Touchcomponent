@@ -2,7 +2,6 @@ package at.nachrichten.newsapp;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -22,8 +21,10 @@ import at.nachrichten.newsapp.utils.Utils;
 import static android.view.View.VISIBLE;
 
 /**
- * Created by Harald on 17.01.2018.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public class NewsShortArticle extends MainActivity {
     private List<TextView> shortArticle;
@@ -62,8 +63,8 @@ public class NewsShortArticle extends MainActivity {
 
     private void setSizeNavigationComponent() {
         ImageView navigationComponent = (ImageView) findViewById(R.id.navigationComponent);
-        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this)/2;
-        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this)/2;
+        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this) / 2;
+        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this) / 2;
     }
 
     private void appendTextViewsToLayout() {
@@ -72,10 +73,10 @@ public class NewsShortArticle extends MainActivity {
         boolean overwriteLoadingArticle = false;
         int i = 0;
         while (iterNewsFeed.hasNext() && i <= 2) {
-            if(!overwriteLoadingArticle) {
+            if (!overwriteLoadingArticle) {
                 assignToLoadingArticleView(iterNewsFeed);
                 overwriteLoadingArticle = !overwriteLoadingArticle;
-            }else {
+            } else {
                 contentLayout.addView(iterNewsFeed.next());
             }
             i++;
@@ -87,10 +88,10 @@ public class NewsShortArticle extends MainActivity {
         List<Article> articles = db.getAllArticles();
         shortArticleHeader = new ArrayList<String>();
         shortArticle = new ArrayList<TextView>();
-        for(Article article : articles){
-            if(article.equals(articles.indexOf(3)))
+        for (Article article : articles) {
+            if (article.equals(articles.indexOf(3)))
                 return;
-            if(article.getCategoryEng().equals(categoriesToLoad) || article.getCategoryGer().equals(categoriesToLoad)) {
+            if (article.getCategoryEng().equals(categoriesToLoad) || article.getCategoryGer().equals(categoriesToLoad)) {
                 shortArticleHeader.add(article.getDate() + "\n" + article.getHeader() + "\n");
                 TextView textViewToAdd = createNextTextView();
                 textViewToAdd.setText(article.getDate() + "\n" + article.getHeader() + "\n");
@@ -116,7 +117,7 @@ public class NewsShortArticle extends MainActivity {
         return nextView;
     }
 
-    private void assignToLoadingArticleView( Iterator<TextView> iterNewsFeed){
+    private void assignToLoadingArticleView(Iterator<TextView> iterNewsFeed) {
         ((TextView) findViewById(R.id.ArticleTextView)).setText(iterNewsFeed.next().getText());
         ((TextView) findViewById(R.id.ArticleTextView)).setTextSize(sizeTextViewTextHeight());
         ((TextView) findViewById(R.id.ArticleTextView)).setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
@@ -124,13 +125,14 @@ public class NewsShortArticle extends MainActivity {
         ((TextView) findViewById(R.id.ArticleTextView)).setOnDragListener(dragListener);
     }
 
-    public float sizeTextViewTextHeight(){
-        return Utils.getScreenHeight(this)/65;
+    public float sizeTextViewTextHeight() {
+        return Utils.getScreenHeight(this) / 65;
     }
 
     public float sizeBackTextViewTextHeight() {
-        return Utils.getScreenHeight(this)/65;
+        return Utils.getScreenHeight(this) / 65;
     }
+
     public int sizeTextViewHeight() {
         return Utils.getScreenHeight(this) / 5;
     }

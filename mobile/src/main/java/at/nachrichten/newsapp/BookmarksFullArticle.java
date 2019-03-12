@@ -4,11 +4,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import at.nachrichten.newsapp.article.Article;
@@ -20,7 +18,8 @@ import at.nachrichten.newsapp.utils.Utils;
 import static android.view.View.VISIBLE;
 
 /**
- * Created by Harald on 17.01.2018.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
 
 public class BookmarksFullArticle extends MainActivity {
@@ -59,12 +58,12 @@ public class BookmarksFullArticle extends MainActivity {
     }
 
     private void appendTextViewsToLayout() {
-   //     LinearLayout contentLayout = (LinearLayout) findViewById(R.id.content);
-   //    Iterator<TextView> iterNewsFeed = fullArticle.iterator();
-   //     while (iterNewsFeed.hasNext()) {
-   //         contentLayout.addView(iterNewsFeed.next());
-   //     }
-        if(fullArticle.iterator().hasNext()) {
+        //     LinearLayout contentLayout = (LinearLayout) findViewById(R.id.content);
+        //    Iterator<TextView> iterNewsFeed = fullArticle.iterator();
+        //     while (iterNewsFeed.hasNext()) {
+        //         contentLayout.addView(iterNewsFeed.next());
+        //     }
+        if (fullArticle.iterator().hasNext()) {
             TextView textView = (TextView) findViewById(R.id.ArticleTextView);
             textView.setText(fullArticle.iterator().next().getText().toString());
         }
@@ -74,11 +73,11 @@ public class BookmarksFullArticle extends MainActivity {
         db = new DBHandler(this);
         List<Article> articles = db.getAllArticles();
         fullArticle = new ArrayList<TextView>();
-        for(Article article : articles){
+        for (Article article : articles) {
             String headerStart = article.getDate() + "\n" + article.getHeader() + "\n" + article.getData() + "\n";
             headerStart = headerStart.substring(0, 15);
-            headerFulArticleToLoad = headerFulArticleToLoad.substring(0,15);
-            if(headerFulArticleToLoad.equals(headerStart)){
+            headerFulArticleToLoad = headerFulArticleToLoad.substring(0, 15);
+            if (headerFulArticleToLoad.equals(headerStart)) {
                 TextView textViewToAdd = createNextTextView();
                 textViewToAdd.setText(article.getDate() + "\n" + article.getHeader() + "\n" + article.getData() + "\n");
                 textViewToAdd.setTextSize(sizeTextViewTextHeight());
@@ -102,8 +101,8 @@ public class BookmarksFullArticle extends MainActivity {
         return nextView;
     }
 
-    public float sizeTextViewTextHeight(){
-        return Utils.getScreenHeight(this)/65;
+    public float sizeTextViewTextHeight() {
+        return Utils.getScreenHeight(this) / 65;
     }
 
     public static void setHeaderFulArticleToLoad(String headerFullArticleToLoad) {

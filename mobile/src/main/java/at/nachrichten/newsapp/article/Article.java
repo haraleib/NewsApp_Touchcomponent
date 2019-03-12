@@ -1,10 +1,10 @@
 package at.nachrichten.newsapp.article;
 
-import java.util.Date;
-
 /**
- * Created by Harald on 17.01.2018.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public class Article {
     private int id;

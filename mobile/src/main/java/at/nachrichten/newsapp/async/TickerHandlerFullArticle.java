@@ -10,11 +10,11 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.List;
 
-import at.nachrichten.newsapp.utils.Utils;
-
 /**
- * Created by Harald on 07.12.2017.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public class TickerHandlerFullArticle extends TickerHandlerShortArticle {
 
@@ -36,11 +36,8 @@ public class TickerHandlerFullArticle extends TickerHandlerShortArticle {
     protected String doInBackground(String... strings) {
         fetched = false;
         try {
-            Document jdoc = Jsoup.connect(url).get();
-            Elements contentTag = jdoc.select("div").attr("class", "artikeldetail");
-            Elements artikelHead = contentTag.select("h2").attr("class", "artikeldetailhead_title");
-            Elements leadText = contentTag.select("h3").attr("class", "leadtext textsize");
-            Elements mainContentTag = jdoc.select("p");
+            Document jSoup = Jsoup.connect(url).get();
+            Elements mainContentTag = jSoup.select("p");
             List<String> mainContentText = mainContentTag.eachText();
             content = mainContentText.get(1) + " " + mainContentTag.get(2);
             fetched = !fetched;

@@ -1,32 +1,22 @@
 package at.nachrichten.newsapp;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.List;
-import java.util.Locale;
-
-import at.nachrichten.newsapp.article.Article;
-import at.nachrichten.newsapp.article.ArticleList;
 import at.nachrichten.newsapp.async.TickerHandlerShortArticle;
-import at.nachrichten.newsapp.database.DBHandler;
 import at.nachrichten.newsapp.listener.DragListenerHome;
 import at.nachrichten.newsapp.listener.TouchListener;
-import at.nachrichten.newsapp.messages.Messages;
-import at.nachrichten.newsapp.speak.Speak;
 import at.nachrichten.newsapp.utils.Utils;
 
-//TODO: exception handling full project
-//TODO: set up news
+/**
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
+ */
+
+
 public class Home extends MainActivity {
-     TextToSpeech ttss;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -39,8 +29,8 @@ public class Home extends MainActivity {
         new TickerHandlerShortArticle().execute();
 
         /*Initialize Listeners*/
-         dragListener = new DragListenerHome(Home.this);
-         touchListener = new TouchListener(Home.this);
+        dragListener = new DragListenerHome(Home.this);
+        touchListener = new TouchListener(Home.this);
 
         /*Set Listeners*/
         findViewById(R.id.navigationComponent).setOnTouchListener(touchListener);
@@ -54,15 +44,15 @@ public class Home extends MainActivity {
 
     private void setSizeNavigationComponent() {
         ImageView navigationComponent = (ImageView) findViewById(R.id.navigationComponent);
-        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this)/2;
-        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this)/2;
+        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this) / 2;
+        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this) / 2;
     }
 
-    public void sizeTextViewTextHeight(){
-        ((TextView) findViewById(R.id.Login)).setTextSize(Utils.getScreenHeight(this)/50);
-        ((TextView) findViewById(R.id.News)).setTextSize(Utils.getScreenHeight(this)/50);
-        ((TextView) findViewById(R.id.Bookmarks)).setTextSize(Utils.getScreenHeight(this)/50);
-        ((TextView) findViewById(R.id.Ticker)).setTextSize(Utils.getScreenHeight(this)/50);
+    public void sizeTextViewTextHeight() {
+        ((TextView) findViewById(R.id.Login)).setTextSize(Utils.getScreenHeight(this) / 50);
+        ((TextView) findViewById(R.id.News)).setTextSize(Utils.getScreenHeight(this) / 50);
+        ((TextView) findViewById(R.id.Bookmarks)).setTextSize(Utils.getScreenHeight(this) / 50);
+        ((TextView) findViewById(R.id.Ticker)).setTextSize(Utils.getScreenHeight(this) / 50);
         //    Float heightF = (float) height;
     }
 }

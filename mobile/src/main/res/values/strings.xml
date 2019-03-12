@@ -23,7 +23,7 @@
     <string name="BOOKMARKS_FIRST_USE_SWIPE_DOWN">Sie befinden sich auf Ihrer Merkliste. Merklisteneinträge sind von oben nach unten gegliedert.
                                                     Benützen Sie den Navigationkreis in der Mitte des Bildschrims und wählen Sie einen Eintrag aus.
     </string>
-    <string name="BOOKMARKS__FULL_ARTICLE_FIRST_USE_SWIPE_DOWN">Sie befinden sich beim einem vollständigen Artikel Ihrer Merkliste.
+    <string name="BOOKMARKS_FULL_ARTICLE_FIRST_USE_SWIPE_DOWN">Sie befinden sich beim einem vollständigen Artikel Ihrer Merkliste.
                                                     Tippen Sie auf auf die Mitte des Bildschirms um sich einen Artikel vorlesen zu lassen.
                                                     tippen Sie erneut um das Vorlesen des Artikels zu beenden.
                             Wenn Sie den Artikel aus der Merkliste entfernen möchten, wischen sie nach rechts.
@@ -32,7 +32,7 @@
     !-- Strings related to Activity entry -->
     <string name="HOME">Sie befinden sich am Startbildschirm</string>
     <string name="HOME_ENTRY">Sie befinden sich am Startbildschirm</string>
-    <string name="TICKER_ENTRY">Sie befinden sich bem Nachrichten Ticker.</string>
+    <string name="TICKER_ENTRY">Sie befinden sich beim Nachrichten Ticker.</string>
     <string name="TICKER_FULL_ARTICLE_ENTRY">Sie befinden sich beim vollständigen Artikel.</string>
     <string name="LOGIN_ENTRY">Sie befinden sich im Login und Registrieungsbereich</string>
     <string name="NEWS_ENTRY">Sie befinden sich bei den Nachrichten Kategorien</string>
@@ -53,7 +53,9 @@
     <string name="ticker_text">Ticker</string>
     <string name="drop_component">Drop Component</string>
     <string name="reg">Drop Component</string>
-    <string name="app_first_use">Willkommen bei News App: Wenn Sie eine kurze Hilfestellung zum Benützen der App haben wollen, berühren Sie kurz die Mitte des Bildschrims und wischen Sie nach unten</string>
+    <string name="short_intro">IMPLEMENT SHORT INTRO</string>
+    <string name="app_first_use">Willkommen bei News App: Wenn Sie eine kurze Hilfestellung zum benützen der App haben wollen, berühren Sie kurz die Mitte des Bildschrims und wischen Sie nach unten.
+        Für eine ausführliche Hilfestellung nach rechts wischen</string>
     <string name="introduction">Sie sind am Startbildschirm. Sie steuern die Applikation mit einer Komponente die sich in der Mitte des Bildschirms befindet:
                                 Als nächsten Schritten eine kurze Erklärung zur Navigation:
                                 Oben links befindet sich das Login, oben rechts können Sie in den News bereich navigieren.

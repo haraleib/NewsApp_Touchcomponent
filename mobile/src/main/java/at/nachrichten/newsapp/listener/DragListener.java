@@ -1,9 +1,5 @@
 package at.nachrichten.newsapp.listener;
 
-/**
- * Created by Harald on 07.12.2017.
- */
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.DragEvent;
@@ -12,8 +8,10 @@ import android.view.View;
 import at.nachrichten.newsapp.speak.Speak;
 
 /**
- * Created by hei on 20.10.2017.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public class DragListener implements View.OnDragListener {
 
@@ -22,7 +20,7 @@ public class DragListener implements View.OnDragListener {
     private Speak speak;
     private final int NO_TEXT_VIEW_ID = 0;
 
-    public DragListener() {
+    private DragListener() {
 
     }
 
@@ -45,14 +43,14 @@ public class DragListener implements View.OnDragListener {
     }
 
     public boolean isTextViewID(int id) {
-        return id  == NO_TEXT_VIEW_ID ? false : true;
+        return id == NO_TEXT_VIEW_ID ? false : true;
     }
 
     public boolean onDrag(View v, DragEvent event) {
         return true;
     }
 
-    public void initSpeak(){
+    public void initSpeak() {
         this.speak = new Speak(context);
     }
 }

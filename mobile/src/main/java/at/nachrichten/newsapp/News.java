@@ -22,8 +22,10 @@ import at.nachrichten.newsapp.utils.Utils;
 import static android.view.View.VISIBLE;
 
 /**
- * Created by Harald on 17.01.2018.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public class News extends MainActivity {
     private List<TextView> categories;
@@ -133,14 +135,17 @@ public class News extends MainActivity {
     }
 
     public float sizeBackTextViewTextHeight() {
-        return Utils.getScreenHeight(this)/65;
+        return Utils.getScreenHeight(this) / 65;
     }
+
     public int sizeTextViewHeight() {
         return Utils.getScreenHeight(this) / 5;
     }
+
     public int sizeBackTextViewHeight() {
         return Utils.getScreenHeight(this) / 6;
     }
+
     public void setBackTextViewHeight() {
         ((TextView) findViewById(R.id.Back)).setHeight(sizeBackTextViewHeight());
         ((TextView) findViewById(R.id.Back)).setMinHeight(sizeBackTextViewHeight());

@@ -23,6 +23,11 @@
     <string name="BOOKMARKS_FIRST_USE_SWIPE_DOWN">Sie befinden sich auf Ihrer Merkliste. Merklisteneinträge sind von oben nach unten gegliedert.
                                                     Benützen Sie den Navigationkreis in der Mitte des Bildschrims und wählen Sie einen Eintrag aus.
     </string>
+    <string name="BOOKMARKS_FULL_ARTICLE_FIRST_USE_SWIPE_DOWN">Sie befinden sich beim einem vollständigen Artikel Ihrer Merkliste.
+                                                    Tippen Sie auf auf die Mitte des Bildschirms um sich einen Artikel vorlesen zu lassen.
+                                                    tippen Sie erneut um das Vorlesen des Artikels zu beenden.
+                            Wenn Sie den Artikel aus der Merkliste entfernen möchten, wischen sie nach rechts.
+    </string>
 
     !-- Strings related to Activity entry -->
     <string name="HOME">Sie befinden sich am Startbildschirm</string>
@@ -44,11 +49,12 @@
     <!-- Strings related to Home -->
     <string name="login_text">Anmelden</string>
     <string name="news_text">News</string>
-    <string name="bookmars_text">Merkliste</string>
+    <string name="bookmarks_text">Merkliste</string>
     <string name="ticker_text">Ticker</string>
     <string name="drop_component">Drop Component</string>
     <string name="reg">Drop Component</string>
-
+    <string name="intro_long_or_short">Für kurze Hilfestellung nach links wischen und für ausführliche Hilfestellung nach rechts wischen</string>
+    <string name="short_intro">IMPLEMENT SHORT INTRO</string>
     <string name="app_first_use">Willkommen bei News App: Wenn Sie eine kurze Hilfestellung zum Benützen der App haben wollen, berühren Sie kurz die Mitte des Bildschrims und wischen Sie nach unten</string>
     <string name="introduction">Sie sind am Startbildschirm. Sie steuern die Applikation mit einer Komponente die sich in der Mitte des Bildschirms befindet:
                                 Als nächsten Schritten eine kurze Erklärung zur Navigation:

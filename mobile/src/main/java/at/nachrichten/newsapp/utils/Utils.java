@@ -21,7 +21,8 @@ import at.nachrichten.newsapp.TickerFullArticle;
 import at.nachrichten.newsapp.speak.Speak;
 
 /**
- * Created by Harald on 10.01.2018.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
 
 public class Utils {
@@ -29,34 +30,34 @@ public class Utils {
     public static boolean HOME_ENTRY = false;
     public static boolean TICKER_ENTRY = false;
     public static boolean TICKER_FULL_ARTICLE_ENTRY = false;
-    public static boolean LOGIN_ENTRY = false;
     public static boolean NEWS_ENTRY = false;
     public static boolean NEWS_SHORT_ENTRY = false;
     public static boolean NEWS_FULL_ARTICLE_ENTRY = false;
     public static boolean BOOKMARKS_ENTRY = false;
     public static boolean BOOKMARKS_FULLARTIKEL_ENTRY = false;
-    public static boolean APP_FIRST_USE_DONE = false;
-    public static int getIdFromTextView(Context context, String textViewName){
+
+    public static int getIdFromTextView(Context context, String textViewName) {
         return context.getResources().getIdentifier(textViewName, "id", context.getPackageName());
     }
-    public static View getRootView(Activity activity){
+
+    public static View getRootView(Activity activity) {
         return activity.findViewById(android.R.id.content);
     }
 
-    public static boolean isTextView(View rootView, int id){
+    public static boolean isTextView(View rootView, int id) {
         return rootView.findViewById(id) instanceof TextView ? true : false;
     }
 
-    public static boolean classEqualsOtherClass(Context context, Class clazz){
-        return context.getClass().equals(clazz) ? true: false;
+    public static boolean classEqualsOtherClass(Context context, Class clazz) {
+        return context.getClass().equals(clazz) ? true : false;
     }
 
-    public static void goToActivity(Context context, Class clazz){
+    public static void goToActivity(Context context, Class clazz) {
         Intent intent = new Intent(context, clazz);
-        ((Activity)context).startActivity(intent);
+        ((Activity) context).startActivity(intent);
     }
 
-    public static int getScreenHeight(Context context){
+    public static int getScreenHeight(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
@@ -64,7 +65,7 @@ public class Utils {
         return size.y;
     }
 
-    public static int getScreenWidth(Context context){
+    public static int getScreenWidth(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         Point size = new Point();
@@ -72,7 +73,7 @@ public class Utils {
         return size.x;
     }
 
-    public static void doSpeakEntryText(Context context, Speak speak){
+    public static void doSpeakEntryText(Context context, Speak speak) {
         Activity currActivity = (Activity) context;
         Context currContext = context;
 
@@ -96,14 +97,15 @@ public class Utils {
     }
 
 
-    public static void chooseHomeEntry(Context context, Speak speak){
-        if(Utils.HOME_ENTRY){
+    public static void chooseHomeEntry(Context context, Speak speak) {
+        if (Utils.HOME_ENTRY) {
             speak.speak(context.getString(R.string.HOME_ENTRY));
-        }else{
+        } else {
             speak.speak(context.getString(R.string.app_first_use));
             Utils.HOME_ENTRY = true;
         }
     }
+
     public static void chooseTickerEntry(Context context, Speak speak) {
         if (Utils.TICKER_ENTRY) {
             speak.speak(context.getString(R.string.TICKER_ENTRY));
@@ -135,7 +137,7 @@ public class Utils {
         if (Utils.BOOKMARKS_FULLARTIKEL_ENTRY) {
             speak.speak(context.getString(R.string.BOOKMARKS_FULLARTIKEL_ENTRY));
         } else {
-            speak.speak(context.getString(R.string.BOOKMARKS__FULL_ARTICLE_FIRST_USE_SWIPE_DOWN));
+            speak.speak(context.getString(R.string.BOOKMARKS_FULL_ARTICLE_FIRST_USE_SWIPE_DOWN));
             Utils.BOOKMARKS_FULLARTIKEL_ENTRY = true;
         }
     }

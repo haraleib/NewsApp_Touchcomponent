@@ -29,7 +29,9 @@ import at.nachrichten.newsapp.speak.Speak;
 import at.nachrichten.newsapp.utils.Utils;
 
 /**
- * Created by hei on 20.10.2017.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
+ * <p>
  * This class gives Motions to an GestureDetector with onTouch() method
  * onTouch method gives Motions to the GestureDetector which handles Gestures
  * on initialization of the TouchListener, a GestureDetector is initialized with the current context and
@@ -94,7 +96,6 @@ public class TouchListener implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
-
         Log.i(Messages.LOG_TAG_TouchListener, "onTouch: " + motionEvent.getAction());
         return getDetector().onTouchEvent(motionEvent);
     }
@@ -111,7 +112,7 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
     private DBHandler db;
 
 
-    GestureListener() {
+    private GestureListener() {
         super();
     }
 
@@ -128,33 +129,12 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
         return true;
     }
 
-
-    public GestureListener getGestureListener() {
-        return this;
-    }
-
     public TouchListener getCurrTouchListener() {
         return currTouchListener;
     }
 
-    public void setCurrTouchListener(TouchListener currTouchListener) {
-        this.currTouchListener = currTouchListener;
-    }
-
     public Speak getSpeak() {
         return speak;
-    }
-
-    public void setSpeak(Speak speak) {
-        this.speak = speak;
-    }
-
-    public static int getSwipeThreshold() {
-        return SWIPE_THRESHOLD;
-    }
-
-    public static int getSwipeVelocityThreshold() {
-        return SWIPE_VELOCITY_THRESHOLD;
     }
 
     @Override
@@ -169,20 +149,16 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
             if (Math.abs(diffX) > Math.abs(diffY)) {
                 if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffX > 0) {
-                        // currTouchListener.getView().setTranslationX(e2.getX());
                         onSwipeRight();
                     } else {
-                        //  currTouchListener.getView().setTranslationX(e2.getX());
                         onSwipeLeft();
                     }
                     result = true;
                 }
             } else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                 if (diffY > 0) {
-                    //   currTouchListener.getView().setTranslationY(e2.getX());
                     onSwipeBottom();
                 } else {
-                    //   currTouchListener.getView().setTranslationY(e2.getX());
                     onSwipeTop();
                 }
                 result = true;
@@ -195,10 +171,6 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
         return result;
     }
 
-    public void realignTouchComponent() {
-        currTouchListener.setView(currTouchListener.getActivity().findViewById(R.id.navigationComponent));
-    }
-
     public void onSwipeTop() {
         getSpeak().onDestroy();
         getCurrTouchListener().getActivity().finishAffinity();
@@ -208,17 +180,15 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
     public void onSwipeRight() {
         Activity currActivity = currTouchListener.getActivity();
         Context currContext = (Context) currActivity;
-
         if (currActivity instanceof Home) {
-            stopSpeakIfSpeaking();
-            Utils.goToActivity(currContext, Home.class);
+            speak.speak(currTouchListener.getContext().getString(R.string.introduction));
         } else if (currActivity instanceof Ticker) {
             stopSpeakIfSpeaking();
             Utils.goToActivity(currContext, Home.class);
         } else if (currActivity instanceof TickerFullArticle) {
             stopSpeakIfSpeaking();
             Utils.goToActivity(currContext, Ticker.class);
-        }  else if (currActivity instanceof Bookmarks) {
+        } else if (currActivity instanceof Bookmarks) {
             stopSpeakIfSpeaking();
             Utils.goToActivity(currContext, Home.class);
         } else if (currActivity instanceof BookmarksFullArticle) {
@@ -243,7 +213,6 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
             Utils.goToActivity(currContext, NewsShortArticle.class);
         }
         Log.i(Messages.LOG_TAG_GestureListener, "onSwipeRight: ");
-        //getCurrTouchListener().getActivity().finish();
     }
 
     public boolean markArticleAsBookmarked() {
@@ -287,10 +256,9 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
     public void onSwipeBottom() {
         Log.i(Messages.LOG_TAG_GestureListener, "onSwipeBottom: ");
         Activity currActivity = currTouchListener.getActivity();
-        Context currContext = (Context) currActivity;
 
         if (currActivity instanceof Home) {
-            speak.speak(currTouchListener.getContext().getString(R.string.introduction));
+            speak.speak(currTouchListener.getContext().getString(R.string.intro_long_or_short));
         } else if (currActivity instanceof Ticker) {
             speak.speak(currTouchListener.getContext().getString(R.string.TICKER_FIRST_USE_SWIPE_DOWN));
         } else if (currActivity instanceof TickerFullArticle) {
@@ -298,7 +266,7 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
         } else if (currActivity instanceof Bookmarks) {
             speak.speak(currTouchListener.getContext().getString(R.string.BOOKMARKS_FIRST_USE_SWIPE_DOWN));
         } else if (currActivity instanceof BookmarksFullArticle) {
-            speak.speak(currTouchListener.getContext().getString(R.string.BOOKMARKS__FULL_ARTICLE_FIRST_USE_SWIPE_DOWN));
+            speak.speak(currTouchListener.getContext().getString(R.string.BOOKMARKS_FULL_ARTICLE_FIRST_USE_SWIPE_DOWN));
         } else if (currActivity instanceof News) {
             speak.speak(currTouchListener.getContext().getString(R.string.NEWS_FIRST_USE_SWIPE_DOWN));
         } else if (currActivity instanceof NewsShortArticle) {
@@ -368,10 +336,10 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
 
             handleSpeaking(" ");
             /*
-            *
-            * NOTHING YET
-            *
-            * */
+             *
+             * NOTHING YET
+             *
+             * */
         } else if (currActivity instanceof TickerFullArticle || currActivity instanceof NewsFullArticle || currActivity instanceof BookmarksFullArticle) {
             View rootView = Utils.getRootView(getCurrTouchListener().getActivity());
             if (rootView.findViewById(R.id.ArticleTextView) != null) {

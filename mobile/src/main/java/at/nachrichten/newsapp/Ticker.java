@@ -22,7 +22,8 @@ import at.nachrichten.newsapp.utils.Utils;
 import static android.view.View.VISIBLE;
 
 /**
- * Created by Harald on 06.12.2017.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
 
 public class Ticker extends MainActivity {
@@ -61,8 +62,8 @@ public class Ticker extends MainActivity {
 
     private void setSizeNavigationComponent() {
         ImageView navigationComponent = (ImageView) findViewById(R.id.navigationComponent);
-        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this)/2;
-        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this)/2;
+        navigationComponent.getLayoutParams().height = Utils.getScreenHeight(this) / 2;
+        navigationComponent.getLayoutParams().width = Utils.getScreenWidth(this) / 2;
     }
 
     private void appendTextViewsToLayout() {
@@ -80,7 +81,7 @@ public class Ticker extends MainActivity {
         newsFeed = new ArrayList<TextView>();
 
         int i = 0;
-        while (iterContent.hasNext() && i <=2) {
+        while (iterContent.hasNext() && i <= 2) {
             TextView textViewToAdd = createNextTextView();
             entry = iterContent.next();
             textViewToAdd.setText(entry.getValue()[0]);
@@ -106,23 +107,24 @@ public class Ticker extends MainActivity {
         return nextView;
     }
 
-    public float sizeTextViewTextHeight(){
+    public float sizeTextViewTextHeight() {
         //    Integer height = ((TextView) findViewById(R.id.ArticleTextView)).getHeight();
         //    Float heightF = (float) height;
-        return Utils.getScreenHeight(this)/65;
+        return Utils.getScreenHeight(this) / 65;
     }
 
-    public int sizeTextViewHeight(){
-        return Utils.getScreenHeight(this)/5;
+    public int sizeTextViewHeight() {
+        return Utils.getScreenHeight(this) / 5;
     }
 
     public float sizeBackTextViewTextHeight() {
-        return Utils.getScreenHeight(this)/75;
+        return Utils.getScreenHeight(this) / 75;
     }
 
     public int sizeBackTextViewHeight() {
         return Utils.getScreenHeight(this) / 6;
     }
+
     public void setBackTextViewHeight() {
         ((TextView) findViewById(R.id.Back)).setHeight(sizeBackTextViewHeight());
         ((TextView) findViewById(R.id.Back)).setMinHeight(sizeBackTextViewHeight());

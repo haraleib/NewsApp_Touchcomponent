@@ -7,17 +7,16 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import at.nachrichten.newsapp.article.Article;
 import at.nachrichten.newsapp.article.ArticleList;
 
-import static android.provider.Contacts.SettingsColumns.KEY;
-
 /**
- * Created by Harald on 17.01.2018.
+ * Created by Harald Eibensteiner
+ * Matr: k01300179
  */
+
 
 public class DBHandler extends SQLiteOpenHelper {
 
@@ -44,24 +43,25 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_ARTICLE + "("
-        + KEY_ID + " INTEGER PRIMARY KEY," + KEY_DATE + " TEXT,"
-        + KEY_HEADER + " TEXT, " + KEY_DATA + " TEXT,  "  + KEY_CATEGORY_ENGL + " TEXT , " + KEY_CATEGORY_GER + " TEXT , "  + KEY_IS_BOOKMARKED + " TEXT" + ")";
+                + KEY_ID + " INTEGER PRIMARY KEY," + KEY_DATE + " TEXT,"
+                + KEY_HEADER + " TEXT, " + KEY_DATA + " TEXT,  " + KEY_CATEGORY_ENGL + " TEXT , " + KEY_CATEGORY_GER + " TEXT , " + KEY_IS_BOOKMARKED + " TEXT" + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-    // Drop older table if existed
+        // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_ARTICLE);
-    // Creating tables again
+        // Creating tables again
         onCreate(db);
     }
 
-    public void dropTable(){
+    public void dropTable() {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DROP TABLE " + DATABASE_NAME + "." + TABLE_ARTICLE);
     }
 
-    public void addArticle(Article article){
+    public void addArticle(Article article) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_DATE, article.getDate().toString());
@@ -75,24 +75,11 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
-    public void addArticlesFromList(ArticleList articleList){
+    public void addArticlesFromList(ArticleList articleList) {
         List<Article> articlesToStore = articleList.articleList;
-        for(Article article : articlesToStore){
+        for (Article article : articlesToStore) {
             addArticle(article);
         }
-    }
-
-    // Getting one shop
-    public Article getSArticle(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_ARTICLE, new String[] { KEY_ID,
-                        KEY_DATA, KEY_HEADER, KEY_DATA}, KEY_ID + "=?",
-                new String[] { String.valueOf(id) }, null, null, null, null);
-        if (cursor != null)
-            cursor.moveToFirst();
-        Article article = new Article(Integer.parseInt(cursor.getString(0)),
-                (cursor.getString(1)), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5), cursor.getString(6));
-        return article;
     }
 
     public List<Article> getAllArticles() {
@@ -136,7 +123,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public void deleteShop(Article article) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_ARTICLE, KEY_ID + " = ?",
-                new String[] { String.valueOf(article.getId()) });
+                new String[]{String.valueOf(article.getId())});
         db.close();
     }
 }
