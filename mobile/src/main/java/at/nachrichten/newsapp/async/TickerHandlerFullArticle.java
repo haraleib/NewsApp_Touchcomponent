@@ -53,6 +53,10 @@ public class TickerHandlerFullArticle extends TickerHandlerShortArticle {
     protected void onPostExecute(String result) {
         if (articleLoaded != null) {
             CharSequence content = getContent();
+            if(content.length() > 751){
+                content = ((String) content).substring(0, 750);
+                content = ((String) content).substring(0,((String) content).lastIndexOf(".") + 1);
+            }
             articleLoaded.setText(content);
         }
         fetched = true;

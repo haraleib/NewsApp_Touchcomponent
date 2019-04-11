@@ -44,10 +44,10 @@ public class BookmarksFullArticle extends MainActivity {
         findViewById(R.id.navigationComponent).setOnTouchListener(touchListener);
         findViewById(R.id.scrollView).setOnDragListener(dragListener); //drag erweitern. nach unten scroll
         findViewById(R.id.Back).setOnDragListener(dragListener);
+        setBackTextViewHeight();
 
         createNewsFeed();
         appendTextViewsToLayout();
-
     }
 
 
@@ -65,7 +65,12 @@ public class BookmarksFullArticle extends MainActivity {
         //     }
         if (fullArticle.iterator().hasNext()) {
             TextView textView = (TextView) findViewById(R.id.ArticleTextView);
-            textView.setText(fullArticle.iterator().next().getText().toString());
+            CharSequence content = fullArticle.iterator().next().getText().toString();
+            if(content.length() > 751){
+                content = ((String) content).substring(0, 750);
+                content = ((String) content).substring(0,((String) content).lastIndexOf(".") + 1);
+            }
+            textView.setText(content);
         }
     }
 
@@ -102,10 +107,24 @@ public class BookmarksFullArticle extends MainActivity {
     }
 
     public float sizeTextViewTextHeight() {
-        return Utils.getScreenHeight(this) / 65;
+        return Utils.getScreenHeight(this) / 90;
     }
 
     public static void setHeaderFulArticleToLoad(String headerFullArticleToLoad) {
         headerFulArticleToLoad = headerFullArticleToLoad;
+    }
+
+    public float sizeBackTextViewTextHeight() {
+        return Utils.getScreenHeight(this) / 65;
+    }
+
+    public int sizeTextViewHeight() {
+        return Utils.getScreenHeight(this) / 6;
+    }
+
+    public void setBackTextViewHeight() {
+        ((TextView) findViewById(R.id.Back)).setHeight(sizeTextViewHeight());
+        ((TextView) findViewById(R.id.Back)).setMinHeight(sizeTextViewHeight());
+        ((TextView) findViewById(R.id.Back)).setTextSize(sizeBackTextViewTextHeight());
     }
 }

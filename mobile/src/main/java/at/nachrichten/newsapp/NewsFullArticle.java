@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.jsoup.helper.StringUtil;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -51,7 +53,12 @@ public class NewsFullArticle extends MainActivity {
 
         createNewsFeed();
         if (fullArticle.iterator().hasNext()) {
-            ((TextView) findViewById(R.id.ArticleTextView)).setText(fullArticle.iterator().next().getText());
+            CharSequence content = fullArticle.iterator().next().getText();
+            if(content.length() > 751){
+                content = ((String) content).substring(0, 750);
+                content = ((String) content).substring(0,((String) content).lastIndexOf(".") + 1);
+            }
+            ((TextView) findViewById(R.id.ArticleTextView)).setText(content);
         }
         sizeTextViewTextHeight();
     }
@@ -101,7 +108,7 @@ public class NewsFullArticle extends MainActivity {
     }
 
     public void sizeTextViewTextHeight() {
-        ((TextView) findViewById(R.id.ArticleTextView)).setTextSize(Utils.getScreenHeight(this) / 75);
+        ((TextView) findViewById(R.id.ArticleTextView)).setTextSize(Utils.getScreenHeight(this) / 90);
     }
 
     public static void setHeaderFulArticleToLoad(String headerFullArticleToLoad) {

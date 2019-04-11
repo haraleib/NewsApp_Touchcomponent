@@ -1,6 +1,7 @@
 package at.nachrichten.newsapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,13 +48,12 @@ public class TickerFullArticle extends MainActivity {
     }
 
     public void sizeTextViewTextHeight() {
-        ((TextView) findViewById(R.id.ArticleTextView)).setTextSize(Utils.getScreenHeight(this) / 75);
+        ((TextView) findViewById(R.id.ArticleTextView)).setTextSize(Utils.getScreenHeight(this) / 90);
     }
 
     public int sizeTextViewHeight() {
         return Utils.getScreenHeight(this) / 6;
     }
-
     public float sizeBackTextViewTextHeight() {
         return Utils.getScreenHeight(this) / 65;
     }

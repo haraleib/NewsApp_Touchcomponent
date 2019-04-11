@@ -1,6 +1,7 @@
 package at.nachrichten.newsapp.speak;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
 import android.speech.tts.TextToSpeech;

@@ -109,6 +109,7 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
     private static final int SWIPE_VELOCITY_THRESHOLD = 100;
     private final int NO_TEXT_VIEW_ID = 0;
     private final int REQ_CODE_SPEECH_INPUT = 100;
+    private boolean prevWasSwipeBottom = false;
     private DBHandler db;
 
 
@@ -150,16 +151,20 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
                 if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
                     if (diffX > 0) {
                         onSwipeRight();
+                        prevWasSwipeBottom = false;
                     } else {
                         onSwipeLeft();
+                        prevWasSwipeBottom = false;
                     }
                     result = true;
                 }
             } else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
                 if (diffY > 0) {
                     onSwipeBottom();
+                    prevWasSwipeBottom = true;
                 } else {
                     onSwipeTop();
+                    prevWasSwipeBottom = false;
                 }
                 result = true;
             }
@@ -181,7 +186,12 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
         Activity currActivity = currTouchListener.getActivity();
         Context currContext = (Context) currActivity;
         if (currActivity instanceof Home) {
-            speak.speak(currTouchListener.getContext().getString(R.string.introduction));
+            if(prevWasSwipeBottom){
+                speak.speak(currTouchListener.getContext().getString(R.string.introduction));
+            }else {
+                stopSpeakIfSpeaking();
+                Utils.goToActivity(currContext, Home.class);
+            }
         } else if (currActivity instanceof Ticker) {
             stopSpeakIfSpeaking();
             Utils.goToActivity(currContext, Home.class);
@@ -248,15 +258,19 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
     }
 
     public void onSwipeLeft() {
-        getSpeak().onDestroy();
-        getCurrTouchListener().getActivity().finish();
+        Activity currActivity = currTouchListener.getActivity();
+        if(currActivity instanceof Home && prevWasSwipeBottom){
+            speak.speak(currTouchListener.getContext().getString(R.string.short_intro));
+        }else {
+            getSpeak().onDestroy();
+            getCurrTouchListener().getActivity().finish();
+        }
         Log.i(Messages.LOG_TAG_GestureListener, "onSwipeLeft: ");
     }
 
     public void onSwipeBottom() {
         Log.i(Messages.LOG_TAG_GestureListener, "onSwipeBottom: ");
         Activity currActivity = currTouchListener.getActivity();
-
         if (currActivity instanceof Home) {
             speak.speak(currTouchListener.getContext().getString(R.string.intro_long_or_short));
         } else if (currActivity instanceof Ticker) {

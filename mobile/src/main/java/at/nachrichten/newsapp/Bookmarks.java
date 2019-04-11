@@ -52,6 +52,7 @@ public class Bookmarks extends MainActivity {
         findViewById(R.id.navigationComponent).setOnTouchListener(touchListener);
         findViewById(R.id.scrollView).setOnDragListener(dragListener); //drag erweitern. nach unten scroll
         findViewById(R.id.Back).setOnDragListener(dragListener);
+        setBackTextViewHeight();
 
         createNewsFeed();
         appendTextViewsToLayout();
@@ -123,5 +124,19 @@ public class Bookmarks extends MainActivity {
         //    Integer height = ((TextView) findViewById(R.id.ArticleTextView)).getHeight();
         //    Float heightF = (float) height;
         return Utils.getScreenHeight(this) / 65;
+    }
+
+    public float sizeBackTextViewTextHeight() {
+        return Utils.getScreenHeight(this) / 65;
+    }
+
+    public int sizeTextViewHeight() {
+        return Utils.getScreenHeight(this) / 6;
+    }
+
+    public void setBackTextViewHeight() {
+        ((TextView) findViewById(R.id.Back)).setHeight(sizeTextViewHeight());
+        ((TextView) findViewById(R.id.Back)).setMinHeight(sizeTextViewHeight());
+        ((TextView) findViewById(R.id.Back)).setTextSize(sizeBackTextViewTextHeight());
     }
 }

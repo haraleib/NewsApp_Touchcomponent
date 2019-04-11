@@ -1,16 +1,12 @@
 package at.nachrichten.newsapp.listener;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import at.nachrichten.newsapp.Bookmarks;
 import at.nachrichten.newsapp.BookmarksFullArticle;
@@ -121,6 +117,10 @@ public class DragListenerContent extends DragListener {
             case DragEvent.ACTION_DRAG_ENDED:
                 v.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.ticker_newsfeed_border));
                 navigationComponent.setVisibility(View.VISIBLE);
+                if (v != null && v instanceof TextView) {
+                    TextView tv = (TextView) v;
+                    tv.setTextColor(Color.BLACK);
+                }
             default:
                 break;
         }
