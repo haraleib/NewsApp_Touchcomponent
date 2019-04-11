@@ -88,6 +88,10 @@ public class DragListenerHome extends DragListener {
             case DragEvent.ACTION_DRAG_ENDED:
                 v.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.home_screen_border));
                 navigatonComponent.setVisibility(View.VISIBLE);
+                if (v != null && v instanceof TextView) {
+                    TextView tv = (TextView) v;
+                    tv.setTextColor(Color.BLACK);
+                }
             default:
                 break;
         }

@@ -262,7 +262,7 @@ class GestureListener extends GestureDetector.SimpleOnGestureListener {
         if(currActivity instanceof Home && prevWasSwipeBottom){
             speak.speak(currTouchListener.getContext().getString(R.string.short_intro));
         }else {
-            getSpeak().onDestroy();
+            stopSpeakIfSpeaking();
             getCurrTouchListener().getActivity().finish();
         }
         Log.i(Messages.LOG_TAG_GestureListener, "onSwipeLeft: ");
